@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayout)
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'));
 
 mongoose.connect(process.env.DATABASE_URL, {
 });
