@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const app = express();
 const expressLayout = require('express-ejs-layouts')
 const indexRouter = require('./routes/index')
+const sampleRouter = require('./routes/samples')
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
@@ -20,4 +21,5 @@ db.on('error', function (err) {console.error(err)});
 db.once('open', function () {console.log('connection open')});
 
 app.use('/', indexRouter)
+app.use('/samples', sampleRouter)
 app.listen(process.env.PORT || 3000)
