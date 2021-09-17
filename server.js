@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express')
 const mongoose = require('mongoose')
-const app = express();
+var app = express();
 const expressLayout = require('express-ejs-layouts')
 const indexRouter = require('./routes/index')
 const sampleRouter = require('./routes/samples')
@@ -18,8 +18,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 });
 const db = mongoose.connection
 db.on('error', function (err) {console.error(err)});
-db.once('open', function () {console.log('connection open')});
-
+app.use(express.urlencoded({limit: '10mb', extended: false}))
 app.use('/', indexRouter)
 app.use('/samples', sampleRouter)
 app.listen(process.env.PORT || 3000)

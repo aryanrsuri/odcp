@@ -1,1 +1,13 @@
-All Samples
+<h2> Search Compounds</h2>
+<form action="/samples" method="GET">
+    <label>Compound</label>
+    <input type="text" name="compound" value="<%= searchOptions.sample_name %>">
+    <button type="submit"> Submit</button>
+</form>
+<br>
+
+<table>
+<% samples.forEach(sample => { %>
+    <tr><td><%= sample.sample_name%></td></tr>
+<% }) %> 
+</table>
