@@ -27,7 +27,8 @@ router.get('/new', (req, res) => {
 // Create sample Router
 router.post('/', async (req, res) => {
     const sample = new Sample({
-        sample_name: req.body.compound
+        sample_name: req.body.compound,
+        sample_description: req.body.upload
     })
     try {
         const newSample = await sample.save()

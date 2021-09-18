@@ -4,6 +4,10 @@ const sampleSchema = new mongoose.Schema({
     sample_name: {
         type: String,
         required: true
+    },
+    sample_description: {
+        type: Buffer,
+        required: false
     }
 })
 

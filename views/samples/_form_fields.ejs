@@ -1,2 +1,21 @@
-<label>Compound of Interest</label>
-<input type="text" name="compound" value="<%= sample.name %>"> 
+<div>
+    <table class="new-sample-table">
+        <tbody>
+            <tr>
+                <th>sample name</th>
+                <td><input type="text" name="compound" value="<%= sample.sample_name %>"></td>
+            </tr>
+            <tr>
+                <th>sample data</th>
+                <td><input type="file" name="upload" accept=".json,.txt,.csv"></td>
+            </tr>
+            <tr>
+                <th>sample submission</th>
+                <td> 
+                    <button type="submit">Create</button>
+                    <a href="/samples">Cancel</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
