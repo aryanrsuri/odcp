@@ -1,21 +1,24 @@
-
 <section class="samples-index">
-    <h3> Search Compounds</h3>
-    <form action="/samples" method="GET">
-        <label>Compound</label>
-        <input type="text" name="compound" value="<%= searchOptions.sample_name %>">
-        <button type="submit"> Submit</button>
-    </form>
-    <br>
+  <h3>Search Compounds</h3>
+  <form action="/samples" method="GET">
+    <label>Compound</label>
+    <input
+      type="text"
+      name="compound"
+      value="<%= searchOptions.sample_name %>"
+    />
+    <button type="submit">Submit</button>
+  </form>
+  <br />
 
-    <table>
-        <tbody>
-            <% samples.forEach(sample => { %>
-                <tr>
-                    <th><%= sample.sample_name%></th>
-                    <td><%= sample.sample_description%></td>
-                </tr>
-            <% }) %> 
-        </tbody>
-    </table>
+  <table>
+    <tbody>
+      <% samples.forEach(sample => { %>
+      <tr>
+        <th><%= sample.sample_name%></th>
+        <td><%= sample.sample_description%></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </section>
