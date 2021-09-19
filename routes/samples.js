@@ -44,7 +44,6 @@ router.post('/', upload.fields([{
   }, {
     name: 'imgUpload', maxCount: 1
   }]), async (req, res) => {
-    console.log(req.files)
     const file_name = req.files.upload[0].filename;
     const image_file_name = req.files.imgUpload[0].filename;
     const sample = new Sample({
