@@ -1,12 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const path = require('path')
 const sample_file_path = 'uploads/files'
-const sample_image_path = 'uploads/images'
 const sampleSchema = new mongoose.Schema({
     sample_name: {
         type: String,
         required: true
     },
-    sample_description: {
+    sample_pdf: {
         type: String,
         required: true
     },
@@ -15,13 +15,18 @@ const sampleSchema = new mongoose.Schema({
         required: true
     }
 })
-// sampleSchema.virtual('sample_file_path').get(function() {
-//     if(this.sample_description != null){
-         
-//     }
-// });
+sampleSchema.virtual('sample_image_path').get(function() {
+    if(this.sample_image != null){
+        return path.join('/', sample_file_path, this.sample_image)
+    }
+});
+
+sampleSchema.virtual('sample_pdf_path').get(function() {
+    if(this.sample_pdf != null){
+        return path.join('/', sample_file_path, this.sample_pdf)
+    }
+});
 
 
 module.exports = mongoose.model("Sample", sampleSchema);
 module.exports.sample_file_path = sample_file_path;
-module.exports.sample_image_path = sample_image_path;

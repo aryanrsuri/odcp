@@ -15,8 +15,9 @@
     <tbody>
       <% samples.forEach(sample => { %>
       <tr>
-        <th><%= sample.sample_name%></th>
-        <td><%= sample.sample_description%></td>
+        <th class="sample-table-header"><%= sample.sample_name%></th>
+        <td> <a href="<%= sample.sample_pdf_path %>" download="<%=sample.sample_name%>.pdf"><p>Download PDF</p> </a></td>
+        <td> <img height="150" width="150" src="<%= sample.sample_image_path %>"> </td>
       </tr>
       <% }) %>
     </tbody>
