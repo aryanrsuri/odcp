@@ -48,6 +48,7 @@ router.post('/', upload.fields([{
     const image_file_name = req.files.imgUpload[0].filename;
     const sample = new Sample({
         sample_name: req.body.compound,
+        sample_description: req.body.description,
         sample_pdf: file_name,
         sample_image: image_file_name
     })

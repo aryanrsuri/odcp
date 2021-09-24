@@ -6,9 +6,13 @@ const sampleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sample_pdf: {
+    sample_description: {
         type: String,
         required: true
+    },
+    sample_pdf: {
+        type: String,
+        required: false
     },
     sample_image: {
         type: String,

@@ -1,6 +1,12 @@
 <section class="new-sample">
+    <select name="ver-select" class="ver-select">
+        <option value="pdf">PDF template</option>
+        <option value="default">XRD-CSV template</option>
+    </select>
     <h3> New Compound</h3>
-    <form action="/samples" method="POST" enctype="multipart/form-data">
-        <%- include('_form_fields') %> 
-    </form>
+    <div class="pdf-ver">
+        <form action="/samples" method="POST" enctype="multipart/form-data">
+            <%- include('_form_fields') %> 
+        </form>
+    </div>
 </section>
