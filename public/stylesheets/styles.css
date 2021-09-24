@@ -42,6 +42,20 @@ section {
     margin: 50px 0px 0px 20px;
 }
 
+.index-description {
+    margin: 50px 0px 0px 25%;
+}
+
+.index-description div {
+    height: 200px;
+    width: 400px;
+}
+
+.index-description .index-news {
+    margin-left: -15%;
+}
+
+
 .landing-description h3 {
     text-align: center;
 }

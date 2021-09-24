@@ -40,8 +40,8 @@ router.get('/new', (req, res) => {
 
 // Create sample Router
 router.post('/', upload.fields([{
-    name: 'upload', maxCount: 1
-  }, {
+    name: 'upload', maxCount: 1 
+}, {
     name: 'imgUpload', maxCount: 1
   }]), async (req, res) => {
     const file_name = req.files.upload[0].filename;
